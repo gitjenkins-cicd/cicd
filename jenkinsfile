@@ -10,6 +10,7 @@ pipeline{
             GIT_REPO_NAME = "cicd"
             GIT_USER_NAME = "gitjenkins-cicd"
         }
+            withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
             steps{
                 echo "========executing A========"
                 sh '''
@@ -21,6 +22,7 @@ pipeline{
                 git commit -m "Update version"
                 git push https://${githubcicd}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                 '''
+            }
             }
             post{
                 always{

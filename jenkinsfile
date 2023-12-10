@@ -21,8 +21,8 @@ pipeline{
                 git config user.name "gitjenkins-cicd"
                 git add test.txt
                 git commit -m "Update version"
-                git pull  origin Dev
-                git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:Dev
+                // git pull  origin Dev
+                git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                 '''
             }
             }

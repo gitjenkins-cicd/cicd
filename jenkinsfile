@@ -10,8 +10,9 @@ pipeline{
             GIT_REPO_NAME = "cicd"
             GIT_USER_NAME = "gitjenkins-cicd"
         }
-            withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
+            
             steps{
+                withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 echo "========executing A========"
                 sh '''
                 ls -lrth 

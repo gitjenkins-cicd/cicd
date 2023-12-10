@@ -18,9 +18,10 @@ pipeline{
                 ls -lrth 
                 sed -i "s/shakeer/${BUILD_NUMBER}/g" test.txt
                 git config user.email "gitjenkins2020@gmail.com"
-                git config user.name "gitjenkins-cicd1"
+                git config user.name "gitjenkins-cicd"
                 git add test.txt
                 git commit -m "Update version"
+                git pull -b Dev
                 git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:Dev
                 '''
             }

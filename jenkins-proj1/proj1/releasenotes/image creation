@@ -1,0 +1,9 @@
+centos image
+jmeter image
+gcloud
+python
+
+FROM dokken/centos-7 as centos
+RUN yum install -y python3 pip3
+RUN pip3 install bzt
+FROM paperhive/gcloud-tools as gcloud

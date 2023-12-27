@@ -18,3 +18,18 @@ updated_content=content.replace("Python", "java")
 print(updated_content)
 with open(filepath, "w") as file:
     file.write(updated_content)
+
+# split
+text = "Python is awesome"
+words = text.split()
+print("Words:", words)
+
+# re find all
+import re
+text = "The quick brown fox"
+pattern = r"brown"
+search = re.search(pattern, text)
+if search:
+    print("pattern found:", search.group())
+else:
+    print("Pattern not found")

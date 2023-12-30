@@ -1,2 +1,3 @@
 java is awesome
 java is excellent
+max_connection=2000
